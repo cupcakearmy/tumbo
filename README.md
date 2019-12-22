@@ -48,7 +48,17 @@ Tumbo will then generate 6 images, build and run them in all the combinations po
 
 ## 🐣 [Examples](https://github.com/cupcakearmy/tumbo/tree/master/examples)
 
-Have a look at the [examples folder]((https://github.com/cupcakearmy/tumbo/tree/master/examples)). I think it's the fastest way to learn
+Have a look at the [examples folder]((https://github.com/cupcakearmy/tumbo/tree/master/examples)). I think it's the fastest way to learn.
+
+To run the simple example
+
+```
+# Clone the repo
+
+pip install tumbo
+
+tumbo examples/simple/spec.yml
+```
 
 ## 📘 Config Reference
 
