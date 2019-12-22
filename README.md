@@ -30,9 +30,9 @@ registry:
     host: my_host
 ```
 
-### 📘 Config Reference
+## 📘 Config Reference
 
-#### Variables
+### Variables
 
 The variables to build the matrix. Simply specify an array for each variable. They will be available in the template.
 
@@ -47,7 +47,7 @@ variables:
         - 0.1.2
 ```
 
-#### Recipe
+### Recipe
 
 The template to compile the dockerfile. Can be a template itself if you don't want to write everything in the same file.
 
@@ -70,7 +70,7 @@ recipe: './{{ my_var }}.j2'
 
 Assuming `my_var` hast the values `a` and `b` it will render to `./a.j2` and `./b.j2` accordingly.
 
-#### Context (Optional)
+### Context (Optional)
 
 **Default:** directory of the config file.
 
@@ -81,7 +81,7 @@ Supports both absolute and relative paths.
 context: ./build
 ```
 
-#### Tag (Optional)
+### Tag (Optional)
 
 **Default:** Creates a tag that includes all variables.
 In most cases it will not be necessary to specify, but can be usefull if your are pushing images. Supports templating of course.
@@ -103,7 +103,7 @@ variables:
 tag: 'my-image-name:{{ var3 }}-{{ var1 }}-{{ var2 }}'
 ```
 
-#### Parallel (Optional)
+### Parallel (Optional)
 
 **Default:** yes
 
@@ -135,7 +135,7 @@ Uses how many thread you specify
 parallel: 2
 ```
 
-#### run (Optional)
+### run (Optional)
 
 **Default:** no
 
@@ -145,7 +145,7 @@ Wether to run the docker image after building. Can be usefull if running automat
 run: yes
 ```
 
-#### push (Optional)
+### push (Optional)
 
 **Default:** no
 
@@ -157,7 +157,7 @@ See below on how to login.
 run: yes
 ```
 
-#### registry (Optional)
+### registry (Optional)
 
 **Default:** Empty
 
