@@ -46,6 +46,10 @@ tumbo spec.yml
 
 Tumbo will then generate 6 images, build and run them in all the combinations possible with the variables given.
 
+## 🐣 [Examples](https://github.com/cupcakearmy/tumbo/tree/master/examples)
+
+Have a look at the [examples folder]((https://github.com/cupcakearmy/tumbo/tree/master/examples)). I think it's the fastest way to learn
+
 ## 📘 Config Reference
 
 ### Variables
