@@ -1,0 +1,5 @@
+FROM python:{{ version }}-alpine
+
+COPY ./hi.py .
+
+CMD [ "python", "hi.py" ]

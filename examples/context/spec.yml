@@ -1,0 +1,10 @@
+variables:
+    version:
+        - 3.8
+        - 3.7
+
+recipe: ./simple.j2
+context: ./foo/bar
+
+run: yes
+parallel: no

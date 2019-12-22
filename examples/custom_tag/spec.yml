@@ -1,0 +1,14 @@
+variables:
+    version:
+        - 3.11
+        - 3.10
+        - 3.9
+    name:
+        - Alice
+        - Bob
+
+recipe: ./simple.j2
+tag: 'my_image:{{version}}-{{name}}'
+
+run: yes
+parallel: no

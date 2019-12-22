@@ -1,0 +1,13 @@
+variables:
+    version:
+        - 3.11
+        - 3.10
+        - 3.9
+    name:
+        - Alice
+        - Bob
+
+recipe: ./simple.j2
+
+run: yes
+parallel: no

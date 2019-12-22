@@ -1,0 +1,13 @@
+FROM python:{{ python_version }}-{{base_image}}
+
+RUN pip install termcolor=={{ package_version }}
+
+WORKDIR /app
+
+{% if package_version == '1.1.0' %}
+COPY ./new.py main.py
+{% else %}
+COPY ./old.py main.py
+{% endif %}
+
+CMD [ "python", "main.py" ]

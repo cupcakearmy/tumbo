@@ -1,0 +1,13 @@
+variables:
+    os:
+        - alpine
+        - debian
+    name:
+        - Alice
+        - Bob
+
+recipe: './recipes/{{ os }}.j2'
+tag: 'hello:{{os}}-{{name}}'
+
+run: yes
+parallel: no

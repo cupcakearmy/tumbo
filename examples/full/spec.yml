@@ -1,0 +1,25 @@
+variables:
+    python_version:
+        - 3.8
+        - 3.7
+        - 3.6
+        - 3.5
+    base_image:
+        - alpine
+        - slim
+    package_version:
+        - 1.1.0
+        - 1.0.1
+        - 1.0.0
+
+context: ./build
+recipe: './Dockerfile.j2'
+tag: "{{package_version}}:{{base_image}}-{{python_version}}"
+
+parallel: no
+push: yes
+run: yes
+registry:
+    username: foo
+    password: bar
+    host: localhost:5000
