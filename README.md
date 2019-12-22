@@ -1,34 +1,44 @@
 # tumbo
 
-Docker matrix build generator
+Docker matrix build generator.
+
+The basic idea is that you combine a config file with custom variables with templating (Jinja2) and *__tumbo__* will run your matrix build in docker.
+
+## 🚀 Quickstart
+
+###### spec.yml
 
 ```yaml
 variables:
-    my_var:
-        - a
-        - b
-        - c
-    some_other:
-        - 0.1.0
-        - 0.1.2
+    version:
+        - 3.11
+        - 3.10
+        - 3.9
+    name:
+        - Alice
+        - Bob
 
-context: ./build
-recipe: './Dockerfile.j2'
-tag: "my-tag:{{ my_var }}-{{ some_other }}"
+recipe: ./Dockerfile.j2
 
-parallel: no
-# no
-# yes : uses all threads available
-# n : number of threads to use
-# default: yes
-
-push: yes
 run: yes
-registry:
-    username: my_user
-    password: my_pass
-    host: my_host
+parallel: no
 ```
+
+###### Dockerfile.j2
+
+```
+FROM alpine:{{ version }}
+
+CMD [ "echo", "Hi {{ name }} from {{ version }}" ]
+```
+
+And run
+
+```sh
+tumbo -c spec.yml
+```
+
+Tumbo will then generate 6 images, build and run them in all the combinations possible with the variables given.
 
 ## 📘 Config Reference
 
