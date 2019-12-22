@@ -54,6 +54,8 @@ To run the simple example
 
 ```
 # Clone the repo
+https://github.com/cupcakearmy/tumbo.git
+cd tumbo
 
 pip install tumbo
 
