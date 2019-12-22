@@ -4,6 +4,12 @@ Docker matrix build generator.
 
 The basic idea is that you combine a config file with custom variables with templating (Jinja2) and *__tumbo__* will run your matrix build in docker.
 
+## 📦 Install
+
+```
+pip install tumbo
+```
+
 ## 🚀 Quickstart
 
 ###### spec.yml
@@ -35,7 +41,7 @@ CMD [ "echo", "Hi {{ name }} from {{ version }}" ]
 And run
 
 ```sh
-tumbo -c spec.yml
+tumbo spec.yml
 ```
 
 Tumbo will then generate 6 images, build and run them in all the combinations possible with the variables given.
