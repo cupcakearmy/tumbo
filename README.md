@@ -30,7 +30,7 @@ registry:
     host: my_host
 ```
 
-### Config Reference
+### 📘 Config Reference
 
 #### Variables
 
@@ -101,4 +101,71 @@ variables:
         - b
 
 tag: 'my-image-name:{{ var3 }}-{{ var1 }}-{{ var2 }}'
+```
+
+#### Parallel (Optional)
+
+**Default:** yes
+
+Whether the builds/push/runs should run in parallel or after each other.
+
+###### no
+
+Parallel off.
+
+```yaml
+parallel: no
+```
+
+
+###### yes
+
+Uses all the threads available on the machine.
+
+```yaml
+parallel: yes
+```
+
+
+###### number
+
+Uses how many thread you specify
+
+```yaml
+parallel: 2
+```
+
+#### run (Optional)
+
+**Default:** no
+
+Wether to run the docker image after building. Can be usefull if running automated tests.
+
+```yaml
+run: yes
+```
+
+#### push (Optional)
+
+**Default:** no
+
+Wether to push the docker image after building.
+Can be used to push images to the docker registry (or your own).
+See below on how to login.
+
+```yaml
+run: yes
+```
+
+#### registry (Optional)
+
+**Default:** Empty
+
+Credentials for `docker login`. Used to push images and to specify a custom registry if necessary.
+
+```yaml
+registry:
+    username: my_user
+    password: my_pass
+    host: my_host
 ```
