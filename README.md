@@ -4,6 +4,11 @@ Docker matrix build generator.
 
 The basic idea is that you combine a config file with custom variables with templating (Jinja2) and *__tumbo__* will run your matrix build in docker.
 
+## 🤔 Motivation
+
+I wanted a tool that allowed me to build/push/run similar docker images easily.
+A basic example would be publishing a package on different version of python (e.g. 3.5-3.8) on different operating systems (maybe alpine and debian). With tumbo we can leverage the power of templating engines to automate this taks without needing to manually write 8 different Dockerfiles and run the commands for each manually.
+
 ## 📦 Install
 
 ```
@@ -48,7 +53,19 @@ Tumbo will then generate 6 images, build and run them in all the combinations po
 
 ## 🐣 [Examples](https://github.com/cupcakearmy/tumbo/tree/master/examples)
 
-Have a look at the [examples folder]((https://github.com/cupcakearmy/tumbo/tree/master/examples)). I think it's the fastest way to learn
+Have a look at the [examples folder]((https://github.com/cupcakearmy/tumbo/tree/master/examples)). I think it's the fastest way to learn.
+
+To run the simple example
+
+```
+# Clone the repo
+https://github.com/cupcakearmy/tumbo.git
+cd tumbo
+
+pip install tumbo
+
+tumbo examples/simple/spec.yml
+```
 
 ## 📘 Config Reference
 
