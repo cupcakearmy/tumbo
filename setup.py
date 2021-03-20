@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 requires = [
-    'Jinja2==2.10.3',
+    'Jinja2==2.11.3',
     'PyYAML==5.2',
     'termcolor==1.1.0',
 ]
