@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 requires = [
     'Jinja2==2.10.3',
-    'PyYAML==5.2',
+    'PyYAML==5.4',
     'termcolor==1.1.0',
 ]
 
